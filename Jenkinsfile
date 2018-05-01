@@ -27,7 +27,8 @@ pipeline {
       steps {
         echo "${KERNEL_VERSION}"
       }
-    }stage('Checkpoint') {
+    }
+    stage('Checkpoint') {
          agent none
          steps {
             checkpoint 'Checkpoint'
