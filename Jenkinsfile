@@ -22,18 +22,18 @@ pipeline {
           }
         }
       }
-    }
-    stage('Say Kernel') {
-      steps {
-        echo "${KERNEL_VERSION}"
-      }
-    }
-    stage('Checkpoint') {
+    }stage('Checkpoint') {
          agent none
          steps {
             checkpoint 'Checkpoint'
          }
       }
+    stage('Say Kernel') {
+      steps {
+        echo "${KERNEL_VERSION}"
+      }
+    }
+    
     stage('Testing') {
         failFast true
         parallel {
